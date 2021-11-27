@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Markdown-code-block支持的语言种类</title>
-    <url>/2021/11/22/Markdown-code-block%E6%94%AF%E6%8C%81%E7%9A%84%E8%AF%AD%E8%A8%80%E7%A7%8D%E7%B1%BB/</url>
+    <url>/blog/2021/11/22/Markdown-code-block%E6%94%AF%E6%8C%81%E7%9A%84%E8%AF%AD%E8%A8%80%E7%A7%8D%E7%B1%BB/</url>
     <content><![CDATA[<p>Markdown code 语法：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">```</span><br><span class="line">ruby</span><br><span class="line">this = &quot;Ruby Code&quot;</span><br><span class="line">puts &quot;This is #&#123;this&#125;&quot;</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
 <p>Code中要插入markdown code的话使用，使用不同数量的（```）<br>Markdown code 可以使用的语言种类：</p>
@@ -147,7 +147,7 @@
   </entry>
   <entry>
     <title>DRQN实现的一些细节</title>
-    <url>/2021/11/20/DRQN%E5%AE%9E%E7%8E%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%86%E8%8A%82/</url>
+    <url>/blog/2021/11/20/DRQN%E5%AE%9E%E7%8E%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%86%E8%8A%82/</url>
     <content><![CDATA[<p>这周在实现DRQN的时候踩了很多坑，在此记录一下。<br>首先是在实现的时候选择了GRU而不是LSTM，GRU是LSTM的一个常用变种，参数比LSTM少一些。</p>
 <table><tr>
 <td><img src="/2021/11/20/DRQN%E5%AE%9E%E7%8E%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%86%E8%8A%82/2.png" class="" width="400" height="300" title="LSTM"></td>
@@ -175,7 +175,7 @@
   </entry>
   <entry>
     <title>OpenGL深度图与空间坐标转换</title>
-    <url>/2021/11/19/OpenGL%E6%B7%B1%E5%BA%A6%E5%9B%BE%E4%B8%8E%E7%A9%BA%E9%97%B4%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</url>
+    <url>/blog/2021/11/19/OpenGL%E6%B7%B1%E5%BA%A6%E5%9B%BE%E4%B8%8E%E7%A9%BA%E9%97%B4%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</url>
     <content><![CDATA[<p>最近使用gym miniworld时用到了深度图，想把深度图重新换回点云，深入看代码时发现生成深度图使用的是如下代码:</p>
 <p>参考自Opengl笔记：<br><a href="http://www.songho.ca/opengl/gl_projectionmatrix.html">http://www.songho.ca/opengl/gl_projectionmatrix.html</a></p>
 <p>基本的变换如下式：</p>
@@ -208,7 +208,7 @@
   </entry>
   <entry>
     <title>R2D2-笔记</title>
-    <url>/2021/11/24/R2D2-%E7%AC%94%E8%AE%B0/</url>
+    <url>/blog/2021/11/24/R2D2-%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>网上看了一圈R2D2的讲解，也没有具体的实现，原论文也没有过多的介绍实现细节。看了一下 <a href="https://github.com/neka-nat/distributed_rl/">https://github.com/neka-nat/distributed_rl/</a> 对R2D2的实现，总结成笔记。<br><a href="https://xlnwel.github.io/blog/reinforcement%20learning/R2D2/">https://xlnwel.github.io/blog/reinforcement%20learning/R2D2/</a><br><a href="https://xlnwel.github.io/blog/reinforcement%20learning/Apex-DQfQ/">https://xlnwel.github.io/blog/reinforcement%20learning/Apex-DQfQ/</a></p>
 <p>首先，总体框架同Apex一样，多个actor，一个learner，搭配parameter server。<br>不同点首先一个是网络，Apex实现的时候使用的是DQN,或dueling DQN， R2D2使用了 Dueling LSTM DQN，在CNN与全连接之间添加了一层LSTM cell（不是LSTM layer）<br>dueling的实现，主要是一个优势函数：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">adv = F.relu(self.adv1(self.hx))</span><br><span class="line">adv = self.adv2(adv)</span><br><span class="line">val = F.relu(self.val1(self.hx))</span><br><span class="line">val = self.val2(val)</span><br></pre></td></tr></table></figure>
@@ -304,7 +304,7 @@
   </entry>
   <entry>
     <title>pytorch笔记和训练时的一些技巧</title>
-    <url>/2021/11/22/pytorch%E7%AC%94%E8%AE%B0%E5%92%8C%E8%AE%AD%E7%BB%83%E6%97%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/</url>
+    <url>/blog/2021/11/22/pytorch%E7%AC%94%E8%AE%B0%E5%92%8C%E8%AE%AD%E7%BB%83%E6%97%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/</url>
     <content><![CDATA[<ul>
 <li>使用服务器端tensorboard时，可以将服务器端口映射到本地端口: </li>
 </ul>
@@ -326,7 +326,7 @@
   </entry>
   <entry>
     <title>算法笔记</title>
-    <url>/2021/11/23/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/</url>
+    <url>/blog/2021/11/23/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<ul>
 <li><a href="https://wiki.python.org/moin/TimeComplexity">python time compexlity</a>: <ul>
 <li>list: array of pointers  </li>
@@ -371,7 +371,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2021/11/26/hello-world/</url>
+    <url>/blog/2021/11/26/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
@@ -389,7 +389,7 @@
   </entry>
   <entry>
     <title>常见算法的框架</title>
-    <url>/2021/11/22/%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%E7%9A%84%E6%A1%86%E6%9E%B6/</url>
+    <url>/blog/2021/11/22/%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%E7%9A%84%E6%A1%86%E6%9E%B6/</url>
     <content><![CDATA[<p>《Labuladong算法小抄》笔记</p>
 <ul>
 <li>快速排序就是个⼆叉树的前序遍历，归并排序就是个⼆叉树的后序遍历</li>

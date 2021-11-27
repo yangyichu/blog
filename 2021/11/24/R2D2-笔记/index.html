@@ -5,25 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/blog/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":"mac","style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yichuyang.com","root":"/blog/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":"mac","style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="网上看了一圈R2D2的讲解，也没有具体的实现，原论文也没有过多的介绍实现细节。看了一下 https:&#x2F;&#x2F;github.com&#x2F;neka-nat&#x2F;distributed_rl&#x2F; 对R2D2的实现，总结成笔记。https:&#x2F;&#x2F;xlnwel.github.io&#x2F;blog&#x2F;reinforcement%20learning&#x2F;R2D2&#x2F;https:&#x2F;&#x2F;xlnwel.github.io&#x2F;blog&#x2F;reinfor">
 <meta property="og:type" content="article">
 <meta property="og:title" content="R2D2-笔记">
-<meta property="og:url" content="http://example.com/2021/11/24/R2D2-%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:url" content="https://yichuyang.com/blog/2021/11/24/R2D2-%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="YYC的个人空间">
 <meta property="og:description" content="网上看了一圈R2D2的讲解，也没有具体的实现，原论文也没有过多的介绍实现细节。看了一下 https:&#x2F;&#x2F;github.com&#x2F;neka-nat&#x2F;distributed_rl&#x2F; 对R2D2的实现，总结成笔记。https:&#x2F;&#x2F;xlnwel.github.io&#x2F;blog&#x2F;reinforcement%20learning&#x2F;R2D2&#x2F;https:&#x2F;&#x2F;xlnwel.github.io&#x2F;blog&#x2F;reinfor">
 <meta property="og:locale" content="zh_CN">
@@ -35,7 +35,7 @@
 <meta property="article:tag" content="强化学习">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/11/24/R2D2-%E7%AC%94%E8%AE%B0/">
+<link rel="canonical" href="https://yichuyang.com/blog/2021/11/24/R2D2-%E7%AC%94%E8%AE%B0/">
 
 
 <script id="page-configurations">
@@ -211,7 +211,7 @@ mjx-container[display="true"] + br {
 
   <div class="site-meta">
 
-    <a href="/" class="brand" rel="start">
+    <a href="/blog/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">YYC的个人空间</h1>
       <span class="logo-line-after"><i></i></span>
@@ -232,32 +232,32 @@ mjx-container[display="true"] + br {
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-top">
 
-    <a href="/top/" rel="section"><i class="fas fa-temperature-high fa-fw"></i>热门文章</a>
+    <a href="/blog/top/" rel="section"><i class="fas fa-temperature-high fa-fw"></i>热门文章</a>
 
   </li>
         <li class="menu-item menu-item-resume">
 
-    <a href="https://yichuyang.com/" rel="noopener" target="_blank"><i class="fa fa-user fa-fw"></i>简历</a>
+    <a href="https://yichuyang.com/" rel="section"><i class="fa fa-user fa-fw"></i>简历</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -315,10 +315,10 @@ mjx-container[display="true"] + br {
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/24/R2D2-%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="https://yichuyang.com/blog/2021/11/24/R2D2-%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
       <meta itemprop="name" content="YYC">
       <meta itemprop="description" content="">
     </span>
@@ -461,9 +461,9 @@ mjx-container[display="true"] + br {
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/pytorch/" rel="tag"># pytorch</a>
-              <a href="/tags/R2D2/" rel="tag"># R2D2</a>
-              <a href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" rel="tag"># 强化学习</a>
+              <a href="/blog/tags/pytorch/" rel="tag"># pytorch</a>
+              <a href="/blog/tags/R2D2/" rel="tag"># R2D2</a>
+              <a href="/blog/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" rel="tag"># 强化学习</a>
           </div>
 
         
@@ -472,11 +472,11 @@ mjx-container[display="true"] + br {
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/11/23/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="prev" title="算法笔记">
+    <a href="/blog/2021/11/23/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="prev" title="算法笔记">
       <i class="fa fa-chevron-left"></i> 算法笔记
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/11/26/hello-world/" rel="next" title="Hello World">
+    <a href="/blog/2021/11/26/hello-world/" rel="next" title="Hello World">
       Hello World <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -543,27 +543,27 @@ mjx-container[display="true"] + br {
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="YYC"
-      src="/images/avatar.gif">
+      src="/blog/images/avatar.gif">
   <p class="site-author-name" itemprop="name">YYC</p>
   <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/archives/">
+          <a href="/blog/archives/">
         
           <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-            <a href="/categories/">
+            <a href="/blog/categories/">
           
         <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-            <a href="/tags/">
+            <a href="/blog/tags/">
           
         <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
@@ -662,30 +662,30 @@ mjx-container[display="true"] + br {
   </div>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
 
-<script src="/js/utils.js"></script>
+<script src="/blog/js/utils.js"></script>
 
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/muse.js"></script>
+<script src="/blog/js/motion.js"></script>
 
 
-<script src="/js/next-boot.js"></script>
+<script src="/blog/js/schemes/muse.js"></script>
 
 
-
-
-  
+<script src="/blog/js/next-boot.js"></script>
 
 
 
 
   
-<script src="/js/local-search.js"></script>
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
 
 
 
@@ -708,5 +708,5 @@ mjx-container[display="true"] + br {
 
   <script async src="/js/cursor/fireworks.js"></script>
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":null,"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/umaru.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.8},"log":false});</script></body>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":null,"tagMode":false,"debug":false,"model":{"jsonPath":"/blog/live2dw/assets/umaru.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.8},"log":false});</script></body>
 </html>
