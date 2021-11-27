@@ -1222,7 +1222,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #0de404;
+  background: #9aab5e;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1542,7 +1542,7 @@ pre .javascript .function {
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
-  left: 30px;
+  right: 10px;
   opacity: 1;
   padding: 0 6px;
   position: fixed;
@@ -2543,7 +2543,7 @@ hr {
   top: -900px;
   bottom: unset;
   transition: all 0.5s ease-in-out;
-  background: url("/images/scroll.png");
+  background: url("https://yichuyang.com/blog/images/scroll.png");
   opacity: 0.9;
 }
 .back-to-top > i {
