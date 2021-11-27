@@ -343,51 +343,6 @@
       </tags>
   </entry>
   <entry>
-    <title>算法笔记</title>
-    <url>/blog/2021/11/23/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<ul>
-<li><a href="https://wiki.python.org/moin/TimeComplexity">python time compexlity</a>: <ul>
-<li>list: array of pointers  </li>
-<li>dict: hashmap </li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><table>
-<thead>
-<tr>
-<th>python swap:</th>
-<th>C swap:</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>a,b = b,a</td>
-<td>a=a^b; b=b^a; a=a^b;</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-<ul>
-<li>python sort排序使用了Timsort</li>
-<li>Tuple 比 list 操作速度快。如果您定义了一个值的常量集, 并且唯一要用它做的是不断地遍历它, 请使用 tuple 代替 list</li>
-</ul>
-<span id="more"></span>
-<ul>
-<li>heapq库：<ul>
-<li>heapq.heappush(heap, item)</li>
-<li>heapq.heappop(heap)</li>
-<li>heapq.heappushpop(heap, item)</li>
-<li>heapq.heapify(x)</li>
-<li>heapq.heapreplace(heap, item)</li>
-<li>heapq.merge(*iterables, key=None, reverse=False)</li>
-<li>heapq.nlargest(n, iterable, key=None)</li>
-<li>heapq.nsmallest(n, iterable, key=None)</li>
-</ul>
-</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
     <title>常见算法的框架</title>
     <url>/blog/2021/11/22/%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%E7%9A%84%E6%A1%86%E6%9E%B6/</url>
     <content><![CDATA[<p>《Labuladong算法小抄》笔记</p>
@@ -435,5 +390,50 @@
       <categories>
         <category>Notes</category>
       </categories>
+  </entry>
+  <entry>
+    <title>算法笔记</title>
+    <url>/blog/2021/11/23/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<ul>
+<li><a href="https://wiki.python.org/moin/TimeComplexity">python time compexlity</a>: <ul>
+<li>list: array of pointers  </li>
+<li>dict: hashmap </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th>python swap:</th>
+<th>C swap:</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>a,b = b,a</td>
+<td>a=a^b; b=b^a; a=a^b;</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<ul>
+<li>python sort排序使用了Timsort</li>
+<li>Tuple 比 list 操作速度快。如果您定义了一个值的常量集, 并且唯一要用它做的是不断地遍历它, 请使用 tuple 代替 list</li>
+</ul>
+<span id="more"></span>
+<ul>
+<li>heapq库：<ul>
+<li>heapq.heappush(heap, item)</li>
+<li>heapq.heappop(heap)</li>
+<li>heapq.heappushpop(heap, item)</li>
+<li>heapq.heapify(x)</li>
+<li>heapq.heapreplace(heap, item)</li>
+<li>heapq.merge(*iterables, key=None, reverse=False)</li>
+<li>heapq.nlargest(n, iterable, key=None)</li>
+<li>heapq.nsmallest(n, iterable, key=None)</li>
+</ul>
+</li>
+</ul>
+]]></content>
   </entry>
 </search>
