@@ -1222,7 +1222,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #888bfe;
+  background: #faadf9;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2540,7 +2540,8 @@ hr {
   right: 50px;
   width: 70px;
   height: 900px;
-  top: -900px;
+  top: -1200px;
+  bottom: unset;
   transition: all 0.5s ease-in-out;
   background: url("https://yichuyang.com/blog/images/scroll.gif");
   opacity: 0.9;
