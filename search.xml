@@ -521,8 +521,19 @@
 <li><p>bellman期望方程</p>
 <p><img src="https://yichu-1305057184.cos.ap-shanghai.myqcloud.com/typora/image-20211127230445986.png" alt="image-20211127230445986"></p>
 </li>
-<li></li>
-<li></li>
+</ol>
+<span id="more"></span>
+
+<ol>
+<li><p>why deterministic?</p>
+<p>Stochastic policy gradient:</p>
+<p>$$ ∇θJ(πθ)=∫Sρπ(s)∫A∇θπθ(a|s)Qπ(s,a)dads=Es∼ρπ,a∼πθ[∇θlogπθ(a|s)Qπ(s,a)]∇θJ(πθ)=∫Sρπ(s)∫A∇θπθ(a|s)Qπ(s,a)dads=Es∼ρπ,a∼πθ[∇θlog⁡πθ(a|s)Qπ(s,a)]</p>
+<p>$$</p>
+<p>Deterministic policy gradient:</p>
+<p>$$ ∇θJ(μθ)=∫Sρμ(s)∇θμθ(s)∇aQμ(s,a)|a=μθ(s)ds=Es∼ρμ[∇θμθ(s)∇aQμ(s,a)|a=μθ(s)]∇θJ(μθ)=∫Sρμ(s)∇θμθ(s)∇aQμ(s,a)|a=μθ(s)ds=Es∼ρμ[∇θμθ(s)∇aQμ(s,a)|a=μθ(s)]</p>
+<p>$$</p>
+<p>Notice that the expectation in the deterministic policy gradient isn’t over the action space.</p>
+</li>
 </ol>
 <p>policy-based 和value-based的区别</p>
 ]]></content>
