@@ -257,7 +257,7 @@
       <span class="post-meta-item-icon">
         <i class="far fa-comment"></i>
       </span>
-      <span class="post-meta-item-text">Valine：</span>
+      <span class="post-meta-item-text">评论数：</span>
     
     <a title="valine" href="/blog/2021/11/22/Markdown-code-block%E6%94%AF%E6%8C%81%E7%9A%84%E8%AF%AD%E8%A8%80%E7%A7%8D%E7%B1%BB/#valine-comments" itemprop="discussionUrl">
       <span class="post-comments-count valine-comment-count" data-xid="/blog/2021/11/22/Markdown-code-block%E6%94%AF%E6%8C%81%E7%9A%84%E8%AF%AD%E8%A8%80%E7%A7%8D%E7%B1%BB/" itemprop="commentCount"></span>
@@ -760,9 +760,9 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       meta       : guest,
       pageSize   : '10' || 10,
       visitor    : false,
-      lang       : '' || 'zh-cn',
+      lang       : 'zh-cn' || 'zh-cn',
       path       : location.pathname,
-      recordIP   : false,
+      recordIP   : true,
       serverURLs : ''
     });
   }, window.Valine);
