@@ -48,7 +48,7 @@
 <meta property="og:image" content="https://spinningup.openai.com/en/latest/_images/math/d313ca98e5fb043c581841a09ea19bce2ce53b04.svg">
 <meta property="og:image" content="https://spinningup.openai.com/en/latest/_images/math/a82208dd637243514710948c4ebbc3c59e9a2e57.svg">
 <meta property="article:published_time" content="2021-11-27T20:32:12.000Z">
-<meta property="article:modified_time" content="2021-11-28T05:38:28.818Z">
+<meta property="article:modified_time" content="2021-11-29T02:23:44.986Z">
 <meta property="article:author" content="YYC">
 <meta property="article:tag" content="强化学习，Notes">
 <meta name="twitter:card" content="summary">
@@ -364,10 +364,31 @@ mjx-container[display="true"] + br {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-28 00:38:28" itemprop="dateModified" datetime="2021-11-28T00:38:28-05:00">2021-11-28</time>
+                <time title="修改时间：2021-11-28 21:23:44" itemprop="dateModified" datetime="2021-11-28T21:23:44-05:00">2021-11-28</time>
               </span>
 
           
+            <span id="/blog/2021/11/27/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E5%B0%8F%E6%8A%84/" class="post-meta-item leancloud_visitors" data-flag-title="强化学习小抄" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/blog/2021/11/27/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E5%B0%8F%E6%8A%84/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/blog/2021/11/27/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E5%B0%8F%E6%8A%84/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -491,7 +512,13 @@ mjx-container[display="true"] + br {
 <p>Any function <img src="https://spinningup.openai.com/en/latest/_images/math/99ac829ad51642abad0797da299214e7ce1da722.svg" alt="b"> used in this way is called a <strong>baseline</strong>. The most common choice of baseline is the <a target="_blank" rel="noopener" href="https://spinningup.openai.com/en/latest/spinningup/rl_intro.html#value-functions">on-policy value function</a> <img src="https://spinningup.openai.com/en/latest/_images/math/263857fcb5eaaf46a4e9a5e6ce2be414d95748aa.svg" alt="V^{\pi}(s_t)"></p>
 <p><img src="https://spinningup.openai.com/en/latest/_images/math/263857fcb5eaaf46a4e9a5e6ce2be414d95748aa.svg" alt="V^{\pi}(s_t)"> cannot be computed exactly is usually approximated with a neural network, <img src="https://spinningup.openai.com/en/latest/_images/math/d313ca98e5fb043c581841a09ea19bce2ce53b04.svg" alt="V_{\phi}(s_t)">, then the goal is:</p>
 <p><img src="https://spinningup.openai.com/en/latest/_images/math/a82208dd637243514710948c4ebbc3c59e9a2e57.svg" alt="\phi_k = \arg \min_{\phi} \underE{s_t, \hat{R}_t \sim \pi_k}{\left( V_{\phi}(s_t) - \hat{R}_t \right)^2},"></p>
-<h3 id="Algorithms-see-手撕强化学习代码"><a href="#Algorithms-see-手撕强化学习代码" class="headerlink" title="Algorithms: see 手撕强化学习代码"></a>Algorithms: see <a href="https://yichuyang.com/blog/2021/11/27/%E6%89%8B%E6%92%95%E5%B8%B8%E7%94%A8%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81/">手撕强化学习代码</a></h3>
+<h3 id="Algorithms-see-手撕强化学习代码"><a href="#Algorithms-see-手撕强化学习代码" class="headerlink" title="Algorithms: see 手撕强化学习代码"></a>Algorithms: see <a href="https://yichuyang.com/blog/2021/11/27/%E6%89%8B%E6%92%95%E5%B8%B8%E7%94%A8%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81/">手撕强化学习代码</a></h3><p>在《RLbook2018》的11.3节中sutton提到，如果涉及到以下三个条件，那么基于值函数的迭代方法就不确保收敛，sutton将其称为”致命三要素” <strong>(deadly triad)</strong>:</p>
+<ol>
+<li>Function Approximation 函数近似。</li>
+<li>Bootstrapping 自助法。使用动态规划或者TD方法，而不是使用完整轨迹的reward。</li>
+<li>Off-policy training 离策略的训练方式。训练用的采样分布不是由目标策略产生的，而且一直在变化。</li>
+</ol>
+
     </div>
 
     
@@ -528,6 +555,7 @@ mjx-container[display="true"] + br {
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -679,6 +707,92 @@ mjx-container[display="true"] + br {
 
 
 
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"NxFnkhXDj709L98MOOusCvsJ-gzGzoHsz","app_key":"XhU0D02ubqnP8WW4d39ywKDe","server_url":null,"security":true};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
 
 
       </div>
@@ -730,6 +844,35 @@ mjx-container[display="true"] + br {
   
 
   <script async src="https://yichuyang.com/blog/js/cursor/fireworks.js"></script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'NxFnkhXDj709L98MOOusCvsJ-gzGzoHsz',
+      appKey     : 'XhU0D02ubqnP8WW4d39ywKDe',
+      placeholder: "快来评论一下吧~",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
 
 
 <script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":null,"tagMode":false,"debug":false,"model":{"jsonPath":"/blog/live2dw/assets/umaru.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.8},"log":false});</script></body>
