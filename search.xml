@@ -553,6 +553,51 @@
 ]]></content>
   </entry>
   <entry>
+    <title>算法笔记</title>
+    <url>/blog/2021/11/23/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<ul>
+<li><a href="https://wiki.python.org/moin/TimeComplexity">python time compexlity</a>: <ul>
+<li>list: array of pointers  </li>
+<li>dict: hashmap </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th>python swap:</th>
+<th>C swap:</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>a,b = b,a</td>
+<td>a=a^b; b=b^a; a=a^b;</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<ul>
+<li>python sort排序使用了Timsort</li>
+<li>Tuple 比 list 操作速度快。如果您定义了一个值的常量集, 并且唯一要用它做的是不断地遍历它, 请使用 tuple 代替 list</li>
+</ul>
+<span id="more"></span>
+<ul>
+<li>heapq库：<ul>
+<li>heapq.heappush(heap, item)</li>
+<li>heapq.heappop(heap)</li>
+<li>heapq.heappushpop(heap, item)</li>
+<li>heapq.heapify(x)</li>
+<li>heapq.heapreplace(heap, item)</li>
+<li>heapq.merge(*iterables, key=None, reverse=False)</li>
+<li>heapq.nlargest(n, iterable, key=None)</li>
+<li>heapq.nsmallest(n, iterable, key=None)</li>
+</ul>
+</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>手撕常用强化学习代码</title>
     <url>/blog/2021/11/27/%E6%89%8B%E6%92%95%E5%B8%B8%E7%94%A8%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81/</url>
     <content><![CDATA[<p><img src="https://yichu-1305057184.cos.ap-shanghai.myqcloud.com/typora/image-20211127235059145.png" alt="image-20211127235059145"></p>
@@ -653,51 +698,6 @@
 <p><img src="https://spinningup.openai.com/en/latest/_images/math/bdbe4cabbba4687b310d99e8fa67ed314339bd31.svg"></p>
 <p>which is almost the same as the DDPG and TD3 policy optimization, except for the min-double-Q trick, the stochasticity, and the entropy term.</p>
 <p><img src="https://yichu-1305057184.cos.ap-shanghai.myqcloud.com/typora/image-20211128022803736.png" alt="image-20211128022803736"></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>算法笔记</title>
-    <url>/blog/2021/11/23/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<ul>
-<li><a href="https://wiki.python.org/moin/TimeComplexity">python time compexlity</a>: <ul>
-<li>list: array of pointers  </li>
-<li>dict: hashmap </li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><table>
-<thead>
-<tr>
-<th>python swap:</th>
-<th>C swap:</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>a,b = b,a</td>
-<td>a=a^b; b=b^a; a=a^b;</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-<ul>
-<li>python sort排序使用了Timsort</li>
-<li>Tuple 比 list 操作速度快。如果您定义了一个值的常量集, 并且唯一要用它做的是不断地遍历它, 请使用 tuple 代替 list</li>
-</ul>
-<span id="more"></span>
-<ul>
-<li>heapq库：<ul>
-<li>heapq.heappush(heap, item)</li>
-<li>heapq.heappop(heap)</li>
-<li>heapq.heappushpop(heap, item)</li>
-<li>heapq.heapify(x)</li>
-<li>heapq.heapreplace(heap, item)</li>
-<li>heapq.merge(*iterables, key=None, reverse=False)</li>
-<li>heapq.nlargest(n, iterable, key=None)</li>
-<li>heapq.nsmallest(n, iterable, key=None)</li>
-</ul>
-</li>
-</ul>
 ]]></content>
   </entry>
 </search>
