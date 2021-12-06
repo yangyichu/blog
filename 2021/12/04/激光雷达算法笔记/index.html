@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"yichuyang.com","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="《Labuladong算法小抄》笔记  快速排序就是个⼆叉树的前序遍历，归并排序就是个⼆叉树的后序遍历  1234567891011121314151617181920&#x2F;&#x2F;快速排序void sort(int[] nums, int lo, int hi) &amp;#123;&#x2F;****** 前序遍历位置 ******&#x2F;&#x2F;&#x2F; 通过交换元素构建分界点 pint p &#x3D; partition(nums, lo,">
+  <meta name="description" content="近期面试经常有人对我的Lidar项目感兴趣，因此在此做一些记录 ICP步骤1：correspondence step 最近对应点​    加速方法：ANN(Approximate Nearest Neighbor) ,如KD-Tree 步骤2： alignment step 求解最优变换 减掉质心坐标 SVD分解  经典ICP cost function, Iso是一个对R的约束，强制R为正交阵，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常见算法的框架">
-<meta property="og:url" content="https://yichuyang.com/blog/2021/11/22/%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%E7%9A%84%E6%A1%86%E6%9E%B6/index.html">
+<meta property="og:title" content="激光雷达算法笔记">
+<meta property="og:url" content="https://yichuyang.com/blog/2021/12/04/%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="YYC的个人空间">
-<meta property="og:description" content="《Labuladong算法小抄》笔记  快速排序就是个⼆叉树的前序遍历，归并排序就是个⼆叉树的后序遍历  1234567891011121314151617181920&#x2F;&#x2F;快速排序void sort(int[] nums, int lo, int hi) &amp;#123;&#x2F;****** 前序遍历位置 ******&#x2F;&#x2F;&#x2F; 通过交换元素构建分界点 pint p &#x3D; partition(nums, lo,">
+<meta property="og:description" content="近期面试经常有人对我的Lidar项目感兴趣，因此在此做一些记录 ICP步骤1：correspondence step 最近对应点​    加速方法：ANN(Approximate Nearest Neighbor) ,如KD-Tree 步骤2： alignment step 求解最优变换 减掉质心坐标 SVD分解  经典ICP cost function, Iso是一个对R的约束，强制R为正交阵，">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-22T19:44:17.000Z">
-<meta property="article:modified_time" content="2021-11-25T22:36:58.042Z">
+<meta property="article:published_time" content="2021-12-04T05:57:05.000Z">
+<meta property="article:modified_time" content="2021-12-05T02:38:50.779Z">
 <meta property="article:author" content="YYC">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://yichuyang.com/blog/2021/11/22/%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%E7%9A%84%E6%A1%86%E6%9E%B6/">
+<link rel="canonical" href="https://yichuyang.com/blog/2021/12/04/%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>常见算法的框架 | YYC的个人空间</title>
+  <title>激光雷达算法笔记 | YYC的个人空间</title>
   
 
 
@@ -200,7 +200,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://yichuyang.com/blog/2021/11/22/%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%E7%9A%84%E6%A1%86%E6%9E%B6/">
+    <link itemprop="mainEntityOfPage" href="https://yichuyang.com/blog/2021/12/04/%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.png">
@@ -213,7 +213,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          常见算法的框架
+          激光雷达算法笔记
         </h1>
 
         <div class="post-meta">
@@ -222,28 +222,13 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-11-22 14:44:17" itemprop="dateCreated datePublished" datetime="2021-11-22T14:44:17-05:00">2021-11-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-25 17:36:58" itemprop="dateModified" datetime="2021-11-25T17:36:58-05:00">2021-11-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
-                </span>
+              <time title="创建时间：2021-12-04 00:57:05 / 修改时间：21:38:50" itemprop="dateCreated datePublished" datetime="2021-12-04T00:57:05-05:00">2021-12-04</time>
             </span>
 
           
-            <span id="/blog/2021/11/22/%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%E7%9A%84%E6%A1%86%E6%9E%B6/" class="post-meta-item leancloud_visitors" data-flag-title="常见算法的框架" title="阅读次数">
+            <span id="/blog/2021/12/04/%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" class="post-meta-item leancloud_visitors" data-flag-title="激光雷达算法笔记" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -258,8 +243,8 @@
       </span>
       <span class="post-meta-item-text">评论数：</span>
     
-    <a title="valine" href="/blog/2021/11/22/%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%E7%9A%84%E6%A1%86%E6%9E%B6/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/blog/2021/11/22/%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%E7%9A%84%E6%A1%86%E6%9E%B6/" itemprop="commentCount"></span>
+    <a title="valine" href="/blog/2021/12/04/%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/blog/2021/12/04/%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -274,47 +259,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>《Labuladong算法小抄》笔记</p>
-<ul>
-<li>快速排序就是个⼆叉树的前序遍历，归并排序就是个⼆叉树的后序遍历</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//快速排序</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span> </span>&#123;</span><br><span class="line"><span class="comment">/****** 前序遍历位置 ******/</span></span><br><span class="line"><span class="comment">// 通过交换元素构建分界点 p</span></span><br><span class="line"><span class="keyword">int</span> p = partition(nums, lo, hi);</span><br><span class="line"><span class="comment">/************************/</span></span><br><span class="line">sort(nums, lo, p - <span class="number">1</span>);</span><br><span class="line">sort(nums, p + <span class="number">1</span>, hi);</span><br><span class="line">&#125; <span class="comment">//先构造分界点，然后去左右⼦数组构造分界点，你看这不就是⼀个⼆叉树的前序遍历吗</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//归并排序</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span> </span>&#123;</span><br><span class="line"><span class="keyword">int</span> mid = (lo + hi) / <span class="number">2</span>;</span><br><span class="line">sort(nums, lo, mid);</span><br><span class="line">sort(nums, mid + <span class="number">1</span>, hi);</span><br><span class="line"><span class="comment">/****** 后序遍历位置 ******/</span></span><br><span class="line"><span class="comment">// 合并两个排好序的⼦数组</span></span><br><span class="line">merge(nums, lo, mid, hi);</span><br><span class="line"><span class="comment">//先对 nums[lo..mid] 排序，再对nums[mid+1..hi] 排序，最后把这两个有序的⼦数组合并</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<table>
-<tr>
-<td> 广度优先【队列】
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 计算从起点 start 到终点 target 的最近距离</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">BFS</span><span class="params">(Node start, Node target)</span> </span>&#123;</span><br><span class="line">    Queue&lt;Node&gt; q; <span class="comment">// 核心数据结构</span></span><br><span class="line">    Set&lt;Node&gt; visited; <span class="comment">// 避免走回头路</span></span><br><span class="line">    </span><br><span class="line">    q.offer(start); <span class="comment">// 将起点加入队列</span></span><br><span class="line">    visited.add(start);</span><br><span class="line">    <span class="keyword">int</span> step = <span class="number">0</span>; <span class="comment">// 记录扩散的步数</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (q <span class="keyword">not</span> empty) &#123;</span><br><span class="line">        <span class="keyword">int</span> sz = q.size();</span><br><span class="line">        <span class="comment">/* 将当前队列中的所有节点向四周扩散 */</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; sz; i++) &#123;</span><br><span class="line">            Node cur = q.poll();</span><br><span class="line">            <span class="comment">/* 划重点：这里判断是否到达终点 */</span></span><br><span class="line">            <span class="keyword">if</span> (cur is target)</span><br><span class="line">                <span class="keyword">return</span> step;</span><br><span class="line">            <span class="comment">/* 将 cur 的相邻节点加入队列 */</span></span><br><span class="line">            <span class="keyword">for</span> (Node x : cur.adj())</span><br><span class="line">                <span class="keyword">if</span> (x <span class="keyword">not</span> in visited) &#123;</span><br><span class="line">                    q.offer(x);</span><br><span class="line">                    visited.add(x);</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/* 划重点：更新步数在这里 */</span></span><br><span class="line">        step++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</td>
-<td>深度优先回溯算法(暴力穷举)
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">result = []</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">backtrack</span>(<span class="params">路径, 选择列表</span>):</span></span><br><span class="line">    <span class="keyword">if</span> 满⾜结束条件:</span><br><span class="line">        result.add(路径)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> 选择 <span class="keyword">in</span> 选择列表:</span><br><span class="line">        做选择</span><br><span class="line">        backtrack(路径, 选择列表)</span><br><span class="line">        撤销选择</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</td>
-</tr>
-</table>
-
-
-<table>
-<tr>
-<td>二叉树遍历框架
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">traverse</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line"> <span class="keyword">for</span> (TreeNode child : root.childern)</span><br><span class="line"> <span class="comment">// 前序遍历需要的操作</span></span><br><span class="line"> traverse(child);</span><br><span class="line"> <span class="comment">// 后序遍历需要的操作 &#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</td>
-<td>图遍历
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">boolean[] visited;</span><br><span class="line"><span class="comment">/* 图遍历框架 */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">traverse</span><span class="params">(Graph graph, <span class="keyword">int</span> s)</span> </span>&#123;</span><br><span class="line"> <span class="keyword">if</span> (visited[s]) <span class="keyword">return</span>;</span><br><span class="line"> <span class="comment">// 经过节点 s</span></span><br><span class="line"> visited[s] = <span class="literal">true</span>;</span><br><span class="line"> <span class="keyword">for</span> (<span class="keyword">int</span> neighbor : graph.neighbors(s))</span><br><span class="line"> traverse(graph, neighbor);</span><br><span class="line"> <span class="comment">// 离开节点 s</span></span><br><span class="line"> visited[s] = <span class="literal">false</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</td>
-</tr>
-</table>
-
-<ul>
-<li>二分搜索<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> int binarySearch(int[] nums, int target) &#123;</span><br><span class="line">    int left = 0, right = ...;</span><br><span class="line"></span><br><span class="line">    while(...) &#123;</span><br><span class="line">        int mid = left + (right - left) / 2;</span><br><span class="line">        if (nums[mid] == target) &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125; else if (nums[mid] &lt; target) &#123;</span><br><span class="line">            left = ...</span><br><span class="line">        &#125; else if (nums[mid] &gt; target) &#123;</span><br><span class="line">            right = ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return ...;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></li>
-</ul>
-<ul>
-<li>滑动窗<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (right &lt; s.size()) &#123;</span><br><span class="line">    // 增大窗口</span><br><span class="line">    window.add(s[right]);</span><br><span class="line">    right++;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (window needs shrink) &#123;</span><br><span class="line">        // 缩小窗口</span><br><span class="line">        window.remove(s[left]);</span><br><span class="line">        left++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
+        <p>近期面试经常有人对我的Lidar项目感兴趣，因此在此做一些记录</p>
+<h2 id="ICP"><a href="#ICP" class="headerlink" title="ICP"></a>ICP</h2><h3 id="步骤1：correspondence-step-最近对应点"><a href="#步骤1：correspondence-step-最近对应点" class="headerlink" title="步骤1：correspondence step 最近对应点"></a>步骤1：correspondence step 最近对应点</h3><p>​    加速方法：ANN(Approximate Nearest Neighbor) ,如KD-Tree</p>
+<h3 id="步骤2：-alignment-step-求解最优变换"><a href="#步骤2：-alignment-step-求解最优变换" class="headerlink" title="步骤2： alignment step 求解最优变换"></a>步骤2： alignment step 求解最优变换</h3><ol>
+<li>减掉质心坐标</li>
+<li>SVD分解</li>
+</ol>
+<p>经典ICP cost function, Iso是一个对R的约束，强制R为正交阵，如不是Iso施加 $+\infty$ 的惩罚 :<br>$$<br>min_{R,t} \sum_{i}^M ||(Rp_i+t)-q_i||+I_{SO}(R)<br>$$<br>可用SVD求解：<br>$$</p>
+<p>$$</p>
 
     </div>
 
@@ -330,12 +282,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/blog/2021/11/20/DRQN%E5%AE%9E%E7%8E%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%86%E8%8A%82/" rel="prev" title="DRQN实现的一些细节">
-      <i class="fa fa-chevron-left"></i> DRQN实现的一些细节
+    <a href="/blog/2021/12/02/%E8%AF%A6%E8%A7%A3%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E5%9C%A8NAS%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" rel="prev" title="详解强化学习在NAS中的应用">
+      <i class="fa fa-chevron-left"></i> 详解强化学习在NAS中的应用
     </a></div>
       <div class="post-nav-item">
-    <a href="/blog/2021/11/22/pytorch%E7%AC%94%E8%AE%B0%E5%92%8C%E8%AE%AD%E7%BB%83%E6%97%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/" rel="next" title="pytorch笔记和训练时的一些技巧">
-      pytorch笔记和训练时的一些技巧 <i class="fa fa-chevron-right"></i>
+    <a href="/blog/2021/12/04/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E5%9C%A8%E9%A2%84%E6%B5%8B%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" rel="next" title="强化学习在预测中的应用">
+      强化学习在预测中的应用 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -396,6 +348,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ICP"><span class="nav-number">1.</span> <span class="nav-text">ICP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A41%EF%BC%9Acorrespondence-step-%E6%9C%80%E8%BF%91%E5%AF%B9%E5%BA%94%E7%82%B9"><span class="nav-number">1.1.</span> <span class="nav-text">步骤1：correspondence step 最近对应点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A42%EF%BC%9A-alignment-step-%E6%B1%82%E8%A7%A3%E6%9C%80%E4%BC%98%E5%8F%98%E6%8D%A2"><span class="nav-number">1.2.</span> <span class="nav-text">步骤2： alignment step 求解最优变换</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
