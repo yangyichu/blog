@@ -28,7 +28,7 @@
 <meta property="og:description" content="近期面试经常有人对我的Lidar项目感兴趣，因此在此做一些记录 ICP步骤1：correspondence step 最近对应点​    加速方法：ANN(Approximate Nearest Neighbor) ,如KD-Tree 步骤2： alignment step 求解最优变换 减掉质心坐标 SVD分解  经典ICP cost function, Iso是一个对R的约束，强制R为正交阵，">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-04T05:57:05.000Z">
-<meta property="article:modified_time" content="2021-12-05T02:38:50.779Z">
+<meta property="article:modified_time" content="2021-12-18T22:41:58.339Z">
 <meta property="article:author" content="YYC">
 <meta name="twitter:card" content="summary">
 
@@ -222,10 +222,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-12-04 00:57:05 / 修改时间：21:38:50" itemprop="dateCreated datePublished" datetime="2021-12-04T00:57:05-05:00">2021-12-04</time>
+              <time title="创建时间：2021-12-04 00:57:05" itemprop="dateCreated datePublished" datetime="2021-12-04T00:57:05-05:00">2021-12-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-18 17:41:58" itemprop="dateModified" datetime="2021-12-18T17:41:58-05:00">2021-12-18</time>
+              </span>
 
           
             <span id="/blog/2021/12/04/%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" class="post-meta-item leancloud_visitors" data-flag-title="激光雷达算法笔记" title="阅读次数">
@@ -265,8 +271,17 @@
 <li>减掉质心坐标</li>
 <li>SVD分解</li>
 </ol>
-<p>经典ICP cost function, Iso是一个对R的约束，强制R为正交阵，如不是Iso施加 $+\infty$ 的惩罚 :<br>$$<br>min_{R,t} \sum_{i}^M ||(Rp_i+t)-q_i||+I_{SO}(R)<br>$$<br>可用SVD求解：<br>$$</p>
-<p>$$</p>
+<p>经典ICP cost function, Iso是一个对R的约束，强制R为正交阵，如不是Iso施加 $+\infty$ 的惩罚 :<br>$$<br>min_{R,t} \sum_{i}^M ||(Rp_i+t)-q_i||+I_{SO}(R)<br>$$<br>可用SVD求解。</p>
+<p>【解法】：</p>
+<p>1.t的取值实际就是两个点云质心距。$t=\bar{q}-R\bar{p}$, 采用质心坐标只需最优化R即可。</p>
+<p>2.将目标函数化简：<br>$$<br>min_{R,t} \sum_{i}^M ||(Rp_i+t)-q_i||\Rightarrow min_{R} \sum_{i}^M ||Rx_i-y_i||\text{\quad (x，y为质心坐标)}\<br>\Rightarrow argmin_R(x^T_ix_i−2y^T_iRx_i+y^T_iy_i)=argmin_R−2y^T_iRx_i=argmax_R{y^T_iRx_i}\<br>=argmax_R Tr(Y^TRX) \text{\quad 若点集带有权重w则为：} argmax_RTr(WY^TRX)<br>$$</p>
+<ol start="3">
+<li><p>利用迹性质，$Tr(WY^TRX)=Tr(RXWY^T)$, 对 $XWY^T$作SVD分解，得到:$Tr(RXWY^T)=Tr(RU\Sigma V^T)=Tr(\Sigma V^TRU)$</p>
+</li>
+<li><p>由于V，U，R都是正交阵，因此$M=V^TRU$也是正交阵，因此M的每个元素绝对值小于等于1，只有当M为单位阵时，原式取得最大值，当然由于R必须为旋转矩阵的限制，单位阵M的最后一个元素可能为-1（对应已经排过序的$\Sigma$最后一个最小的特征值），</p>
+<p>由此，$R=VU^T$, 若R不是旋转矩阵，则$R=Vdiag(1,1,….,1,det(VU^T))U^T$</p>
+</li>
+</ol>
 
     </div>
 
